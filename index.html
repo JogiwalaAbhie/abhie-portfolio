@@ -21,7 +21,6 @@
       padding: 20px;
       text-align: center;
       background-color: #1f1f1f;
-      position: sticky;
       top: 0;
       z-index: 1000;
     }
@@ -115,6 +114,83 @@
       background-color: #1f1f1f;
     }
 
+    .animated-container {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 173, 181, 0.2);
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.animated-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 173, 181, 0.35);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-container.animate {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+#projects {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.project {
+  background-color: #1e1e1e;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 173, 181, 0.15);
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 173, 181, 0.3);
+}
+
+.project h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #00adb5;
+}
+
+.project p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+
     #scrollToTopBtn {
       display: none;
       position: fixed;
@@ -148,30 +224,37 @@
 </head>
 
 <body>
-  <header>
-    <h2 style="font-size: 2.5em;">👋 Hi, I'm Abhishek Jogiwala</h2>
-    <nav>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#education" class="nav-link">Education</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-    <br/>
-    <div class="social-icons">
-      <a href="https://github.com/JogiwalaAbhie/" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://in.linkedin.com/in/abhishek-jogiwala-8a1324243" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/_whoisabhie._/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </header>
+    <header class="hero-header">
+        <div class="header-content">
+          <div class="intro">
+            <h1>👋 I'm Abhishek Jogiwala</h1>
+            <p class="tagline">Creative Software & Web Developer | Passionate about clean UI & problem-solving.</p>
+            
+            <div class="social-icons">
+              <a href="https://github.com/JogiwalaAbhie/" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://in.linkedin.com/in/abhishek-jogiwala-8a1324243" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/_whoisabhie._/" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      
 
-  <section class="about animate__animated animate__zoomIn" id="about">
+  <section class="about animated-container animate animate__animated animate__zoomIn" id="about">
+  
     <h2>About Me</h2>
-    <p>Hello! I'm Jogiwala Abhishek, a creative Flutter and Web Developer. I am passionate about building beautiful, user-friendly mobile apps and websites that solve real-world problems. My development approach blends both design thinking and clean code practices. I enjoy working with modern technologies and continuously learning to enhance my skills.
-    </p>
-  </section>
+    <p>Hello! I'm Jogiwala Abhishek, a creative Flutter and Web Developer. I am passionate about building beautiful, user-friendly mobile apps and websites that solve real-world problems. My development approach blends both design thinking and clean code practices. I enjoy working with modern technologies and continuously learning to enhance my skills.</p>
 
-  <section class="skills animate__animated animate__fadeInUp" id="skills">
+</section>
+
+
+  <section class="skills animated-container animate animate__animated animate__fadeInUp" id="skills">
     <h2>Skills</h2>
     <ul>
       <li>✅ Mobile App Development: Flutter, Firebase</li>
@@ -183,33 +266,38 @@
     </ul>
   </section>
 
-  <section class="projects animate__animated animate__fadeInLeft" id="projects">
+  <section class="projects animated-container animate animate__animated animate__fadeInLeft" id="projects">
     <h2>Projects</h2>
-    <div class="project animate__animated animate__pulse">
-      <h3>TaskMate - Task Management System</h3>
-      <p>TaskMate is a task management mobile application developed using Flutter and Firebase. It allows users to create, manage, and complete tasks efficiently with features like authentication, real-time data storage, notifications, and task reminders.</p>
+    <div class="project-grid">
+
+        <div class="project animate__animated animate__pulse">
+            <h3>TaskMate - Task Management System</h3>
+            <p>TaskMate is a task management mobile application developed using Flutter and Firebase. It allows users to create, manage, and complete tasks efficiently with features like authentication, real-time data storage, notifications, and task reminders.</p>
+          </div>
+          <div class="project animate__animated animate__pulse">
+            <h3>E-Commerce Website</h3>
+            <p>This is an online shopping website created using PHP, MySQL, HTML, CSS, and Bootstrap. It supports product listing, cart functionality, user authentication, and admin features like adding or removing products from the inventory.</p>
+          </div>
+          <div class="project animate__animated animate__pulse">
+            <h3>GoBuddy - Travel App</h3>
+            <p>GoBuddy is a travel and trip hosting application made with Flutter and Firebase. Users can explore new destinations, host trips, join other users' trips, and manage their bookings. The app includes user authentication, Firestore database usage, and photo uploads.</p>
+          </div>
+          <div class="project animate__animated animate__pulse">
+              <h3>Simple Calculator</h3>
+              <p>The Simple Calculator is a sleek and responsive mobile application developed using Flutter. Designed with both functionality and aesthetics in mind, the app allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.</p>
+            </div>
+            
+            <div class="project animate__animated animate__pulse">
+              <h3>AI Chatbot</h3>
+              <p>An interactive AI chatbot developed using JavaScript and an AI API for smart responses. It mimics real-time conversation and offers a simple, sleek interface for engaging user experiences.</p>
+            </div>
+
     </div>
-    <div class="project animate__animated animate__pulse">
-      <h3>E-Commerce Website</h3>
-      <p>This is an online shopping website created using PHP, MySQL, HTML, CSS, and Bootstrap. It supports product listing, cart functionality, user authentication, and admin features like adding or removing products from the inventory.</p>
-    </div>
-    <div class="project animate__animated animate__pulse">
-      <h3>GoBuddy - Travel App</h3>
-      <p>GoBuddy is a travel and trip hosting application made with Flutter and Firebase. Users can explore new destinations, host trips, join other users' trips, and manage their bookings. The app includes user authentication, Firestore database usage, and photo uploads.</p>
-    </div>
-    <div class="project animate__animated animate__pulse">
-        <h3>Simple Calculator</h3>
-        <p>A responsive web-based calculator built using HTML, CSS, and JavaScript. It handles basic arithmetic operations with a clean UI and error handling for smooth user interaction across all devices.</p>
-      </div>
-      
-      <div class="project animate__animated animate__pulse">
-        <h3>AI Chatbot</h3>
-        <p>An interactive AI chatbot developed using JavaScript and an AI API for smart responses. It mimics real-time conversation and offers a simple, sleek interface for engaging user experiences.</p>
-      </div>
+    
       
   </section>
 
-  <section class="education animate__animated animate__fadeInUp" id="education">
+  <section class=" animated-container animate education animate__animated animate__fadeInUp" id="education">
     <h2>Experience & Education</h2>
     <p><strong>Experience:</strong> Fresher,  I am currently a fresher and actively looking for opportunities where I can apply my skills and grow professionally.
     </p>
@@ -219,7 +307,7 @@
     <a href="resume.pdf" class="resume-button" download>📄 Download Resume</a>
   </section>
 
-  <section class="contact animate__animated animate__fadeInRight" id="contact">
+  <section class=" animated-container animate contact animate__animated animate__fadeInRight" id="contact">
     <h2>Contact Me</h2>
     <form action="https://formspree.io/f/mwkgygyy" method="POST" id="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
